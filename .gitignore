@@ -1,0 +1,23 @@
+# Ignore license.txt
+license.txt
+
+# Ignore all .zip files
+*.zip
+
+# Ignore all .gz files
+*.gz
+
+# Ignore Terraform status files
+gcp/.terraform*
+gcp/terraform.tfstate*
+gcp/terraform.tfvars.bak
+gcp/.tfvars
+gcp/*.tfvars
+/.idea
+gcp/terraform.log
+
+gcp/create-vm/terraform.tfstate*
+gcp/create-vm/*.tfvars
+
+
+/gcp/create-vm/.terraform

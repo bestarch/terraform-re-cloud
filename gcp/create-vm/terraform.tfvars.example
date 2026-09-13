@@ -1,0 +1,21 @@
+prefix = "abhitest"
+owner = "abhishek_srivastava"
+
+# Project Configuration
+project_id         = "xxxxx"
+
+# Firewall Rules 
+tcp_ports          = ["22", "80", "443", "8080"]
+
+region             = "asia-south1"
+zone               = "asia-south1-a"
+zones               = ["asia-south1-a", "asia-south1-b", "asia-south1-c"]
+
+# VPC and Subnet Configuration
+subnet_cidr        = "10.0.2.0/24"
+  
+# VM Details 
+disk_size          = 25
+disk_type          = "pd-balanced"
+image = "projects/rhel-cloud/global/images/rhel-9-v20250212"
+
