@@ -74,6 +74,31 @@ variable "disk_type" {
   description = "Disk type for boot disk"
 }
 
+variable "machine_type_lastnode" {
+  description = "machine type to use for the last VM instance in the primary cluster"
+  default     = "e2-standard-4"
+}
+
+variable "image_lastnode" {
+  description = "The image to use for the last VM instance in the primary cluster"
+  type        = string
+}
+
+variable "disk_size_lastnode" {
+  description = "Size of boot disk for the last VM instance in the primary cluster"
+  default     = 20
+}
+
+variable "disk_type_lastnode" {
+  description = "Disk type for boot disk of the last VM instance in the primary cluster"
+}
+
+variable "asymmetric_cluster" {
+  description = "If true, the last VM in the primary cluster uses the _lastnode boot disk variables instead of the standard ones"
+  type        = bool
+  default     = false
+}
+
 variable "cluster_name" {
   description = "Full name of Redis cluster such as mycluster.example.com"
   type        = string

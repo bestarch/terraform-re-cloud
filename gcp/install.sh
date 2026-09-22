@@ -10,7 +10,7 @@ install() {
   sudo tar -xvf "/opt/redis_enterprise" -C /opt/ && \
   cd /opt && \
   sudo ./install.sh -y 
-  sleep 30
+  sleep 20
 
   log_info "$logger" "Checking node bootstrap status and address..." 
   log_info "$logger" "curl: https://${node_internal_ip}:9443/v1/bootstrap" 

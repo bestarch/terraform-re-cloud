@@ -150,15 +150,15 @@ resource "google_compute_instance" "redis_vms" {
   count        = var.node_count_primary
   name         = "${var.prefix}-vm-${count.index}"
   zone         = var.zones[(count.index) % length(var.zones)]
-  machine_type = var.machine_type
+  machine_type = var.asymmetric_cluster && var.node_count_primary >= 3 && count.index == var.node_count_primary - 1 ? var.machine_type_lastnode : var.machine_type 
   tags         = ["${var.prefix}-redis"]
 
   # Boot disk configuration
   boot_disk {
     initialize_params {
-      image = var.image
-      size  = var.disk_size
-      type  = var.disk_type
+      image = var.asymmetric_cluster && var.node_count_primary >= 3 && count.index == var.node_count_primary - 1 ? var.image_lastnode : var.image
+      size  = var.asymmetric_cluster && var.node_count_primary >= 3 && count.index == var.node_count_primary - 1 ? var.disk_size_lastnode : var.disk_size
+      type  = var.asymmetric_cluster && var.node_count_primary >= 3 && count.index == var.node_count_primary - 1 ? var.disk_type_lastnode : var.disk_type
     }
   }
 
