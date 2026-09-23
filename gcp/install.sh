@@ -46,8 +46,5 @@ log_info "$logger" "Tar file location: ${redis_tar_file_location}"
 
 install 10
 
-log_info "$logger" "Installing Redis CLI..."
-sudo dnf install redis -y 
-log_info "$logger" "Redis CLI installed successfully"
 
 

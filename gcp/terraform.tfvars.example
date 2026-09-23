@@ -41,9 +41,9 @@ disk_type_lastnode   = "pd-balanced"
 image_lastnode       = "projects/rhel-cloud/global/images/rhel-9-v20250212"
 
 ## For making the last-node as quorum only node, invoke the following commands:
-## "rladmin status nodes" --> get the NODE_ID
-## "rladmin tune node <NODE_ID> quorum_only enabled" --> make the node quorum only
-## Verify using following command -> "rladmin status nodes"
+## "sudo /opt/redislabs/bin/rladmin status nodes" --> get the NODE_ID
+## "sudo /opt/redislabs/bin/rladmin tune node <NODE_ID> quorum_only enabled" --> make the node quorum only
+## Verify using following command -> "sudo /opt/redislabs/bin/rladmin status nodes"
 
 node_count_primary = 3
 
